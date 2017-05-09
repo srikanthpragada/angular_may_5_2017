@@ -1,0 +1,26 @@
+
+<style>
+ .big { font-size : 40pt;}
+ .bright { color : red}
+</style>
+
+<input #text1 type="text"/>
+<p></p>
+<button (click)="process(text1.value)">Process</button>
+<p></p>
+{{name}}
+<p></p>
+
+<div  *ngIf="false">Included </div>
+
+<p></p>
+
+
+<input  [(ngModel)]="isBig" type="checkbox"/>Big 
+<input  [(ngModel)]="isBright" type="checkbox"/>Bright 
+<p></p>
+<div [class.big]="isBig"  [class.bright]="isBright"  > {{name}} </div>
+
+
+
+

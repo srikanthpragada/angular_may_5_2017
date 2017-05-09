@@ -4,3 +4,9 @@
 <ul>
      <li *ngFor="let t of topics">{{t}}</li>
 </ul>
+
+New Topic <br/>
+<input type="text"  [(ngModel)] ="newtopic">
+<br/>
+<button (click)="addTopic()">Add Topic </button>
+

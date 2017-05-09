@@ -8,6 +8,11 @@ export class CourseComponent {
    name : string ="Angular 2";
    duration : string = "10 Hours";
    topics : string [] = ["TypeScript", "Buliding Blocks", "Ajax"];
-   
-  
+   newtopic : string;
+
+   addTopic()
+   {
+      this.topics.push(this.newtopic);
+      this.newtopic = "";
+   }
 }

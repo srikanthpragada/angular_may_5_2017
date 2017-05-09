@@ -1,0 +1,20 @@
+<html>
+    <body>
+        <h1>Interest Calculation</h1>
+      
+        Deposit Amount 
+        <br>
+        <input [(ngModel)]="amount">
+        <p></p>
+        Interest Rate
+        <br>
+        <input [(ngModel)]="rate">
+        <p></p>
+        <button (click)="clearAll()">Clear </button>
+
+        <p></p>
+        <div *ngIf="amount > 0 && rate > 0">
+             Interest : {{ amount * rate / 100 }}
+        </div>
+    </body>
+</html>
