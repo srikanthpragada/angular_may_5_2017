@@ -1,0 +1,31 @@
+<html>
+<style>
+ .ng-invalid { color : red}
+</style>
+<body>
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" 
+         name="loginForm"
+         #loginForm="ngForm">
+        <label for="uname">Username </label> <br>
+        <input type="text" id="uname" #uname="ngModel"
+               [(ngModel)]="username" 
+               name="username" 
+               minlength="4" 
+               required>  
+        <span *ngIf="uname.dirty && uname.invalid">
+            <span *ngIf="uname.errors.required">Username is required!</span>
+            <span *ngIf="uname.errors.minlength">Minimum of 4 char required!</span>
+        </span>
+
+        <p></p>
+        <label for="pwd">Password </label> <br>
+        <input type="password" id="pwd" [(ngModel)]="password"
+                   #pwd="ngModel" name="password" required>
+        <span *ngIf="pwd.dirty && pwd.invalid">Password is required!</span>
+        <p></p>
+        <button [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+</body>
+
+</html>

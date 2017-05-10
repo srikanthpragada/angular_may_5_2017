@@ -1,0 +1,23 @@
+<html>
+<style>
+  input.ng-invalid { color:red}
+</style>
+<body>
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()"  [formGroup]="loginForm">
+        <label for="username">Username</label> <br>
+        <input type="text" id="username" formControlName="username">
+        <span *ngIf="loginForm.controls.username.invalid && isSubmitted">
+               <span *ngIf="loginForm.controls.username.errors.required">Username must be entered </span>
+               <span *ngIf="loginForm.controls.username.errors.minlength">Username must be >= 4 chars</span>
+        </span>
+        <p></p>
+        <label for="password">Password </label> <br>
+        <input type="password" id="password"  formControlName="password">
+        <span *ngIf="loginForm.controls.password.invalid && isSubmitted">Password is required</span>
+        <p></p>
+        <button>Login</button>
+   </form>
+</body>
+
+</html>
